@@ -33,18 +33,18 @@ class __calc__(object):
         for __clearBut__ in (["CE"],["C"]):
             __erase__ = self._Frame_Calc_( frame, tkinter.TOP)
             for __ichar__ in __clearBut__:
-                self.Button(__erase__, tkinter.LEFT, __ichar__,
+                self.__Button__(__erase__, tkinter.LEFT, __ichar__,
                             lambda storeObj=self.__display__, q=__ichar__: storeObj.set(''))
 
     def _equals_(self, frame):
         __EqualsButton__ = self._Frame_Calc_( frame, tkinter.TOP)
         for __iEquals__ in "=":
             if __iEquals__ == '=':
-                __btniEquals__ = self.Button(__EqualsButton__, tkinter.LEFT, __iEquals__)
+                __btniEquals__ = self.__Button__(__EqualsButton__, tkinter.LEFT, __iEquals__)
                 __btniEquals__.bind('<ButtonRelease-1>',
                         lambda e, s=self, storeObj=self.__display__: s.calc(storeObj), '+')
             else:
-                __btniEquals__ = self.Button(__EqualsButton__, tkinter.LEFT, __iEquals__,
+                __btniEquals__ = self.__Button__(__EqualsButton__, tkinter.LEFT, __iEquals__,
                         lambda storeObj=self.__display__, s=' %s '%__iEquals__: storeObj.set(storeObj.get()+s))
 
     def calc(self, display):
@@ -53,7 +53,7 @@ class __calc__(object):
         except:
             display.set("ERROR")
 
-    def Button(self, frame, side, text, command=None):
+    def __Button__(self, frame, side, text, command=None):
         __objButton__ = tkinter.Button(frame)
         __objButton__.configure(text= text)
         __objButton__.configure(font= self.font)
