@@ -18,7 +18,7 @@ class __calc__(object):
         for __NumBut__ in ("()%","/789", "*456", "-123", "+.0"):
             __FunctionNum__ = self._Frame_Calc_( frame, tkinter.TOP)
             for __iEquals__ in __NumBut__:
-                self.Button(__FunctionNum__, tkinter.LEFT, __iEquals__,
+                self.__Button__(__FunctionNum__, tkinter.LEFT, __iEquals__,
                             lambda __storeObj__= self.__display__, q=__iEquals__: __storeObj__.set(__storeObj__.get() + q))
             
     def _display_(self, frame):
